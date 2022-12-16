@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Autók kezelése</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container-fluid text-center ">
+  <div>
+    <h1>Autók listájának a kezelése</h1>
+  </div>
+  <div>
+    <a th:href="@{/cars/new}"> Új autó felvétele</a>
+  </div>
+  <div>
+    <table class="table table-bordered">
+      <thead class="p-3 mb-2 bg-light text-dark">
+      <tr>
+        <td>ID</td>
+        <td>Autó típusa</td>
+        <td>Autó rendszáma</td>
+        <td>Autó színe</td>
+        <td></td>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block th:each="car : ${listCar}">
+        <tr>
+          <td>[[${car.id}]]</td>
+          <td>[[${car.CarType}]]</td>
+          <td>[[${car.CarLicense}]]</td>
+          <td>[[${car.CarColor}]]</td>
+          <td>
+            <a th:href="@{'/cars/edit/' + ${car.id}}">Szerkesztés</a>
+            <a th:href="@{'/cars/delete/' + ${car.id}}">Törlés</a>
+          </td>
+        </tr>
+
+      </th:block>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+</body>
+</html>

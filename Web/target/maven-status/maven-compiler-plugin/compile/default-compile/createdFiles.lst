@@ -1,0 +1,6 @@
+com\webbeadando\crud\ui\User\User.class
+com\webbeadando\crud\ui\User\SecurityConfig.class
+com\webbeadando\crud\ui\User\UserRepository.class
+com\webbeadando\crud\ui\User\UserController.class
+com\webbeadando\crud\ui\User\UserService.class
+com\webbeadando\crud\ui\User\UserNotFoundException.class

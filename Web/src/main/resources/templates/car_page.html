@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Autó felvétel</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="text-center"> <h2>[[${pageTitle}]]</h2> </div>
+
+  <form th:action="@{/car/save}" method="post" th:object="${car}" style="max-width : 600px; margin: 0 auto;">
+    <input type="hidden" th:field="*{id}">
+    <div>
+      <div class="form-group row">
+        <label class="col-sm-4 col-format-lable">Autó típusa</label>
+        <div class="col-sm-8">
+          <input type="text" th:field="*{CarType}" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-4 col-format-lable">Autó rendszáma</label>
+        <div class="col-sm-8">
+          <input type="text" th:field="*{CarLicense}" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-4 col-format-lable">Autó színe</label>
+        <div class="col-sm-8">
+          <input type="text" th:field="*{CarColor}" class="form-control">
+        </div>
+      </div>
+
+      <div>
+        <button type="submit">Mentés</button>
+        <button type="button"onclick="cancelForm()">Mégse</button>
+      </div>
+    </div>
+  </form>
+</div>
+<script type="text/javascript">
+  function cancelForm(){
+    window.location ="[[@{/cars}]]";
+  }
+</script>
+</body>
+</html>
